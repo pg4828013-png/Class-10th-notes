@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CLASS 10th NOTES — Bihar Board और CBSE के विद्यार्थियों के लिए हिंदी और English में अध्ययन सामग्री।">
+<title>CLASS 10th NOTES | Study Smart</title>
+<style>
+:root{--navy:#14213d;--blue:#2563eb;--sky:#eaf2ff;--ink:#172033;--muted:#64748b;--paper:#f7f9fc;--line:#e5eaf2;--white:#fff;--green:#13845b}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+header{background:linear-gradient(125deg,#14213d,#2456a6);color:white;padding:18px max(5vw,20px) 54px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:15px;max-width:1100px;margin:auto}
+.brand{font-size:20px;font-weight:800;letter-spacing:.3px}.brand span{color:#a9ceff}
+.navtag{font-size:12px;background:#ffffff20;padding:7px 12px;border-radius:20px}
+.hero{max-width:1100px;margin:42px auto 0}.eyebrow{color:#c9dcff;font-size:13px;font-weight:700;letter-spacing:1px}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:10px 0}.hero p{max-width:650px;color:#e0eaff;font-size:17px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.controls select,.search{border:1px solid #d6dfed;background:white;border-radius:10px;padding:11px 13px;font-size:14px;color:#172033}
+main{max-width:1100px;margin:-24px auto 50px;padding:0 20px}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 10px 30px #1720330b}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:26px 0 14px}.section-head h2{margin:0;font-size:23px}.section-head p{margin:3px 0 0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.subject{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:left;cursor:pointer;transition:.2s;color:var(--ink)}
+.subject:hover,.subject.active{border-color:var(--blue);box-shadow:0 7px 22px #2563eb14;transform:translateY(-2px)}
+.subject .emoji{font-size:26px}.subject h3{margin:8px 0 3px}.subject p{margin:0;color:var(--muted);font-size:13px}
+.badge{display:inline-block;margin-top:12px;padding:4px 9px;background:var(--sky);color:#1d4ed8;border-radius:20px;font-size:11px;font-weight:700}
+.chapter-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:15px}
+.chapter{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fff}
+.chapter h3{margin:0 0 5px;font-size:16px}.chapter p{margin:0;color:var(--muted);font-size:13px}
+.chapter button,.primary{margin-top:12px;background:var(--blue);color:#fff;border:0;border-radius:9px;padding:9px 13px;font-weight:700;cursor:pointer}
+.note{margin-top:18px;padding:18px;background:#f8fbff;border:1px solid #dbeafe;border-radius:12px}
+.note h3{margin:0 0 8px}.note p{margin:7px 0}.note ul{padding-left:22px}
+.notice{font-size:13px;color:var(--muted);margin-top:16px}
+footer{text-align:center;padding:28px 18px;background:#111c32;color:#dbe6f8;font-size:13px}
+.search{width:min(100%,330px)}
+@media(max-width:600px){header{padding-bottom:45px}.hero{margin-top:30px}.panel{padding:16px}.brand{font-size:17px}}
+</style>
+</head>
+<body>
+<header>
+  <nav><div class="brand">CLASS <span>10th</span> NOTES</div><div class="navtag">FREE STUDY HUB</div></nav>
+  <section class="hero">
+    <div class="eyebrow">LEARN • PRACTICE • GROW</div>
+    <h1 id="heroTitle">कक्षा 10 की पढ़ाई, अब आसान!</h1>
+    <p id="heroDesc">Bihar Board और CBSE के विद्यार्थियों के लिए notes, chapter-wise revision और practice सामग्री — एक ही जगह।</p>
+    <div class="controls">
+      <select id="board" aria-label="Select board"><option value="both">Bihar Board + CBSE</option><option value="bihar">Bihar Board</option><option value="cbse">CBSE</option></select>
+      <select id="language" aria-label="Select language"><option value="hi">हिंदी</option><option value="en">English</option></select>
+    </div>
+  </section>
+</header>
+<main>
+  <section class="panel">
+    <div class="section-head"><div><h2 id="subjectHeading">अपने विषय चुनें</h2><p id="subjectSub">किसी विषय पर क्लिक करके उपलब्ध अध्याय देखें।</p></div><input class="search" id="search" placeholder="अध्याय खोजें / Search chapters…"></div>
+    <div class="grid" id="subjects"></div>
+    <div class="section-head"><div><h2 id="chapterHeading">अध्याय और नोट्स</h2><p id="chapterSub">शुरू करने के लिए कोई विषय चुनें।</p></div></div>
+    <div id="chapters" class="chapter-list"><div class="chapter"><h3>Welcome!</h3><p>ऊपर दिए गए विषयों में से कोई एक चुनें।</p></div></div>
+    <div id="note" class="note" hidden></div>
+    <p class="notice" id="notice">ध्यान दें: Bihar Board और CBSE का syllabus/अध्याय क्रम अलग हो सकता है। परीक्षा की तैयारी से पहले अपने स्कूल या बोर्ड के नवीनतम syllabus से मिलान करें। यह शुरुआती वेबसाइट टेम्पलेट है; सभी अध्यायों के पूर्ण नोट्स अभी जोड़े जाने बाकी हैं।</p>
+  </section>
+</main>
+<footer>© <span id="year"></span> CLASS 10th NOTES • Learn with confidence</footer>
+<script>
+const data = [
+ {id:"math",icon:"📐",hi:"गणित",en:"Mathematics",descHi:"सूत्र, उदाहरण और अभ्यास",descEn:"Formulas, examples and practice",chapters:[
+  ["वास्तविक संख्याएँ","Real Numbers","अंकगणित के मूल सिद्धांत और यूक्लिड विभाजन एल्गोरिथ्म।","Fundamental properties of numbers and Euclid’s division algorithm."],
+  ["बहुपद","Polynomials","बहुपद के शून्यक और गुणांकों से उनका संबंध।","Zeros of a polynomial and their relationship with coefficients."],
+  ["दो चर वाले रैखिक समीकरण","Pair of Linear Equations","दो रैखिक समीकरणों के हल की विधियाँ।","Methods for solving a pair of linear equations."],
+  ["द्विघात समीकरण","Quadratic Equations","ax² + bx + c = 0 के रूप और हल।","Standard form and solutions of ax² + bx + c = 0."]
+ ]},
+ {id:"science",icon:"🔬",hi:"विज्ञान",en:"Science",descHi:"भौतिकी, रसायन और जीवविज्ञान",descEn:"Physics, Chemistry and Biology",chapters:[
+  ["रासायनिक अभिक्रियाएँ एवं समीकरण","Chemical Reactions and Equations","रासायनिक अभिक्रिया में नए पदार्थ बनते हैं। समीकरण को संतुलित करना द्रव्यमान संरक्षण के नियम पर आधारित है।","A chemical reaction forms new substances. Equations are balanced according to the law of conservation of mass."],
+  ["अम्ल, क्षारक एवं लवण","Acids, Bases and Salts","अम्ल नीले लिटमस को लाल करते हैं; क्षारक लाल लिटमस को नीला करते हैं। pH किसी विलयन की अम्लीय या क्षारीय प्रकृति बताता है।","Acids turn blue litmus red; bases turn red litmus blue. The pH scale indicates how acidic or basic a solution is."],
+  ["जीवन प्रक्रियाएँ","Life Processes","पोषण, श्वसन, परिवहन और उत्सर्जन जीवों की प्रमुख जीवन प्रक्रियाएँ हैं।","Nutrition, respiration, transportation and excretion are essential life processes."],
+  ["प्रकाश — परावर्तन एवं अपवर्तन","Light: Reflection and Refraction","प्रकाश का परावर्तन सतह से लौटना और अपवर्तन एक माध्यम से दूसरे में जाने पर दिशा बदलना है।","Reflection is the bouncing back of light; refraction is its change in direction between media."]
+ ]},
+ {id:"sst",icon:"🌍",hi:"सामाजिक विज्ञान",en:"Social Science",descHi:"इतिहास, भूगोल, नागरिक शास्त्र, अर्थशास्त्र",descEn:"History, Geography, Civics and Economics",chapters:[
+  ["यूरोप में राष्ट्रवाद का उदय","The Rise of Nationalism in Europe","यूरोप में राष्ट्रवाद के विकास से आधुनिक राष्ट्र-राज्यों के निर्माण को गति मिली।","The growth of nationalism in Europe helped shape modern nation-states."],
+  ["संसाधन एवं विकास","Resources and Development","संसाधनों का विवेकपूर्ण उपयोग और संरक्षण सतत विकास के लिए आवश्यक है।","Careful use and conservation of resources are essential for sustainable development."],
+  ["सत्ता की साझेदारी","Power Sharing","लोकतंत्र में सत्ता का बँटवारा विभिन्न समूहों और संस्थाओं के बीच किया जाता है।","In a democracy, power is shared among different groups and institutions."],
+  ["विकास","Development","विकास के लक्ष्य अलग-अलग लोगों के लिए अलग हो सकते हैं।","Development goals can differ from person to person."]
+ ]},
+ {id:"english",icon:"📘",hi:"अंग्रेज़ी",en:"English",descHi:"Grammar, reading और writing",descEn:"Grammar, reading and writing",chapters:[
+  ["व्याकरण","Grammar","Tenses, modals, subject-verb agreement और reported speech का अभ्यास करें।","Practise tenses, modals, subject-verb agreement and reported speech."],
+  ["लेखन कौशल","Writing Skills","पत्र, अनुच्छेद और सूचना लेखन का अभ्यास करें।","Practise letters, paragraphs and analytical or descriptive writing as prescribed."]
+ ]},
+ {id:"hindi",icon:"✍️",hi:"हिंदी",en:"Hindi",descHi:"व्याकरण, साहित्य और लेखन",descEn:"Grammar, literature and writing",chapters:[
+  ["व्याकरण","Grammar","संधि, समास, पदबंध और वाक्य-रचना का अभ्यास करें।","Practise grammar topics prescribed by your board."],
+  ["लेखन कौशल","Writing Skills","पत्र, अनुच्छेद और निबंध लेखन का अभ्यास करें।","Practise letters, paragraphs and essays."]
+ ]},
+ {id:"sanskrit",icon:"🕉️",hi:"संस्कृत",en:"Sanskrit",descHi:"व्याकरण, अनुवाद और पाठ",descEn:"Grammar, translation and lessons",chapters:[
+  ["व्याकरण एवं अनुवाद","Grammar and Translation","शब्दरूप, धातुरूप और सरल वाक्यों के अनुवाद का अभ्यास करें।","Practise declensions, verb forms and translation of simple sentences."]
+ ]}
+];
+let selected="science";
+const $=id=>document.getElementById(id);
+function lang(){return $("language").value}
+function boardName(){return $("board").value==="bihar"?"Bihar Board":$("board").value==="cbse"?"CBSE":"Bihar Board + CBSE"}
+function renderSubjects(){
+ $("subjects").innerHTML=data.map(s=>`<button class="subject ${s.id===selected?"active":""}" data-id="${s.id}"><div class="emoji">${s.icon}</div><h3>${s[lang()]}</h3><p>${lang()==="hi"?s.descHi:s.descEn}</p><span class="badge">${s.chapters.length} ${lang()==="hi"?"नमूना अध्याय":"sample chapters"}</span></button>`).join("");
+ document.querySelectorAll(".subject").forEach(b=>b.addEventListener("click",()=>{selected=b.dataset.id;renderSubjects();renderChapters()}));
+}
+function renderChapters(){
+ const s=data.find(x=>x.id===selected);const q=$("search").value.toLowerCase();
+ const chapters=s.chapters.filter(c=>c.join(" ").toLowerCase().includes(q));
+ $("chapterSub").textContent=(lang()==="hi"?"बोर्ड: ":"Board: ")+boardName()+" • "+s[lang()];
+ $("chapters").innerHTML=chapters.length?chapters.map((c,i)=>`<article class="chapter"><h3>${lang()==="hi"?c[0]:c[1]}</h3><p>${lang()==="hi"?"संक्षिप्त परिचय":"Quick overview"}</p><button data-index="${s.chapters.indexOf(c)}">${lang()==="hi"?"नोट्स पढ़ें":"Read notes"}</button></article>`).join(""):`<p>${lang()==="hi"?"कोई अध्याय नहीं मिला।":"No chapter found."}</p>`;
+ document.querySelectorAll(".chapter button").forEach(b=>b.addEventListener("click",()=>showNote(s.chapters[Number(b.dataset.index)])));
+ $("note").hidden=true;
+}
+function showNote(c){
+ const n=$("note");n.hidden=false;
+ n.innerHTML=`<h3>${lang()==="hi"?c[0]:c[1]}</h3><p><b>${lang()==="hi"?"नोट्स":"Notes"}:</b> ${lang()==="hi"?c[2]:c[3]}</p><p><b>${lang()==="hi"?"याद रखें":"Remember"}:</b> ${lang()==="hi"?"यह शुरुआती सारांश है। अपनी पाठ्यपुस्तक के उदाहरण और अभ्यास प्रश्न भी हल करें।":"This is a starter summary. Also study textbook examples and solve the exercises."}</p><p class="notice">${lang()==="hi"?"यह नमूना सामग्री है; अपने बोर्ड की निर्धारित पुस्तक से मिलान करें।":"Sample content: verify details with your board-prescribed textbook."}</p>`;
+ n.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+function update(){
+ $("heroTitle").textContent=lang()==="hi"?"कक्षा 10 की पढ़ाई, अब आसान!":"Class 10 learning, made easier!";
+ $("heroDesc").textContent=lang()==="hi"?"Bihar Board और CBSE के विद्यार्थियों के लिए notes, chapter-wise revision और practice सामग्री — एक ही जगह.":"Notes, chapter-wise revision and practice material for Bihar Board and CBSE students — all in one place.";
+ $("subjectHeading").textContent=lang()==="hi"?"अपने विषय चुनें":"Choose your subjects";
+ $("subjectSub").textContent=lang()==="hi"?"किसी विषय पर क्लिक करके उपलब्ध अध्याय देखें।":"Select a subject to explore available chapters.";
+ $("chapterHeading").textContent=lang()==="hi"?"अध्याय और नोट्स":"Chapters and Notes";
+ $("notice").textContent=lang()==="hi"?"ध्यान दें: Bihar Board और CBSE का syllabus/अध्याय क्रम अलग हो सकता है। परीक्षा की तैयारी से पहले अपने स्कूल या बोर्ड के नवीनतम syllabus से मिलान करें। यह शुरुआती वेबसाइट टेम्पलेट है; सभी अध्यायों के पूर्ण नोट्स अभी जोड़े जाने बाकी हैं।":"Note: Bihar Board and CBSE syllabi and chapter order may differ. Check the latest official syllabus before exam preparation. This is a starter website template; full notes for every chapter still need to be added.";
+ renderSubjects();renderChapters();
+}
+$("language").addEventListener("change",update);$("board").addEventListener("change",renderChapters);$("search").addEventListener("input",renderChapters);
+$("year").textContent=new Date().getFullYear();update();
+</script>
+</body></html>
